@@ -6,8 +6,25 @@
     
     function capitalize_words($cap){
         $cap_words = ucwords($cap);
-        echo $cap_words;
+        echo "$cap_words <br>";
     }
+
+    function word_len($w){
+    $n = 0;
+    for ($l=0; $l< strlen($w); $l++){
+        $c = $w[$l];
+        
+        if( $c != ' '){
+            echo "$c";
+            $n++;
+        }
+        else{
+            echo "$n ";
+            $n=0;
+        };
+
+    }
+        echo $n;}
     ?>
 <form method="post">
     Enter your words: <input type="tesxt" name="words"></form>
@@ -19,4 +36,8 @@ count_words($_POST['words']);
 if(isset($_POST['words'])){ 
     capitalize_words($_POST['words']);
     }
+
+if(isset($_POST['words'])){ 
+    word_len($_POST['words']);
+     }
 ?>
